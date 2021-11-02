@@ -14,7 +14,7 @@
             </div>
         </div>
 
-        <div class="lg:w-1/4 bg-blue-100 rounded-lg p-4">
+        <div class="lg:w-1/4 bg-blue-50 rounded-lg p-4">
             @include('partials._friends-list')
         </div>
     </div>

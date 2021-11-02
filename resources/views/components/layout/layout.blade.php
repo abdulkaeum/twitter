@@ -20,7 +20,7 @@
         @if(request()->routeIs('login.create') || request()->routeIs('register.create'))
             {{ $slot }}
         @else
-            <section class="px-8">
+            <section class="px-8 py-10">
                 @include('partials._nav')
 
                 <main class="container mx-auto">
