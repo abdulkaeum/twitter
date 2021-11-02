@@ -47,6 +47,11 @@ class User extends Authenticatable
         $this->attributes['password'] = bcrypt($password);
     }
 
+    public function getAvatarAttribute()
+    {
+        return "https://i.pravatar.cc/40?u=" . $this->id;
+    }
+
     public function timeline()
     {
         return Tweet::where('user_id', $this->id)->latest()->get();

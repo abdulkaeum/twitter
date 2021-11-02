@@ -7,5 +7,17 @@ use Illuminate\Http\Request;
 
 class TweetController extends Controller
 {
+    public function store(Request $request)
+    {
+        $attributes = $request->validate([
+            'body' => ['required', 'min:5', 'max:255']
+        ]);
 
+        Tweet::create([
+            'user_id' => auth()->user()->id,
+            'body' => $attributes['body']
+        ]);
+
+        return back()->with('success', 'Your Tweety is out in the open  ');
+    }
 }
