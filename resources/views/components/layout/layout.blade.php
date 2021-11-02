@@ -14,17 +14,25 @@
 </head>
 
 <body>
-    <div id="app">
-        <section class="px-8 py-4 mb-6">
-            <header class="container mx-auto">
-                <img src="/images/twitter-logos.jpeg" alt="Twitter">
-            </header>
-        </section>
+    @include('partials._flash')
 
-        <section class="px-8">
-            <main class="container mx-auto">
-                {{ $slot }}
-            </main>
-        </section>
+    <div id="app">
+        @if(request()->routeIs('login.create') || request()->routeIs('register.create'))
+            {{ $slot }}
+        @else
+            <section class="px-8">
+                @include('partials._nav')
+
+                <main class="container mx-auto">
+                    {{ $slot }}
+                </main>
+            </section>
+        @endif
     </div>
+
+    <!-- AlpineJS -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
+            integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
 </body>
