@@ -24,7 +24,20 @@
                 @include('partials._nav')
 
                 <main class="container mx-auto">
-                    {{ $slot }}
+
+                    <div class="lg:flex lg:justify-between">
+                        <div class="lg:w-32">
+                            @include('partials._sidebar-links')
+                        </div>
+
+                        <div class="lg:flex-1 lg:mx-10" style="max-width: 700px">
+                            {{ $slot }}
+                        </div>
+
+                        <div class="lg:w-1/4 bg-blue-50 rounded-lg p-4">
+                            @include('partials._friends-list')
+                        </div>
+                    </div>
                 </main>
             </section>
         @endif

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Followable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -10,7 +11,7 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, Followable;
 
     /**
      * The attributes that are mass assignable.
@@ -49,7 +50,7 @@ class User extends Authenticatable
 
     public function getAvatarAttribute()
     {
-        return "https://i.pravatar.cc/40?u=" . $this->id;
+        return "https://i.pravatar.cc/200?u=" . $this->id;
     }
 
     public function timeline()
@@ -60,13 +61,9 @@ class User extends Authenticatable
             ->get();
     }
 
-    public function follow(User $user)
+    public function tweets()
     {
-        return $this->follows()->save($user);
+        return $this->hasMany(Tweet::class);
     }
 
-    public function follows()
-    {
-        return $this->belongsToMany(User::class, 'follows', 'user_id', 'following_user_id');
-    }
 }

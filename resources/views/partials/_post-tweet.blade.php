@@ -18,6 +18,8 @@
                 class="rounded-full mr-3"
                 src="{{ auth()->user()->avatar }}"
                 alt=""
+                width="40"
+                height="40"
             >
 
             <x-forms.submit>Tweet-it</x-forms.submit>
