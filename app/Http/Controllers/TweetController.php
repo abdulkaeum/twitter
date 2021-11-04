@@ -25,6 +25,6 @@ class TweetController extends Controller
             'body' => $attributes['body']
         ]);
 
-        return back()->with('success', 'Your Tweety is out in the open  ');
+        return back()->with('success', 'Your Tweety is out in the open');
     }
 }

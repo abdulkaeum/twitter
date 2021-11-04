@@ -27,5 +27,5 @@ Route::middleware('auth')->group(function (){
 
     Route::post('follow/{user}', [FollowController::class, 'store'])->name('follow');
 
-    Route::get('explore', [ExploreController::class, 'index'])->name('explore.index');
+    Route::get('explore', ExploreController::class)->name('explore.index');
 });

@@ -42,7 +42,8 @@
     </header>
 
     @include('partials._timeline', [
-        'tweets' => $user->tweets
+        'tweets' => $tweets,
+        'user' => $user
     ])
 
 </x-layout.layout>

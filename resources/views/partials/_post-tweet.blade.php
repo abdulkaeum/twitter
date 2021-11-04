@@ -9,6 +9,7 @@
             placeholder="What's on you mind..."
             class="w-full p-3 outline-none"
             required
+            autofocus
         ></textarea>
 
         <hr class="py-4"/>
@@ -18,11 +19,13 @@
                 class="rounded-full mr-3"
                 src="{{ auth()->user()->avatar }}"
                 alt=""
-                width="40"
-                height="40"
+                width="50"
+                height="50"
+
+
             >
 
-            <x-forms.submit>Tweet-it</x-forms.submit>
+            <x-forms.submit class="rounded-xl">Tweet-it</x-forms.submit>
         </footer>
     </form>
     <x-forms.error name="body" class="mt-3"/>
