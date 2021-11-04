@@ -47,6 +47,8 @@
 
                                 <x-forms.input name="name" required/>
 
+                                <x-forms.input name="username" required/>
+
                                 <x-forms.input name="email" type="email" required/>
 
                                 <x-forms.input name="password" type="password" required/>

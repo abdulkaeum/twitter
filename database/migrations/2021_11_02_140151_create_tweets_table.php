@@ -13,7 +13,7 @@ class CreateTweetsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tweet', function (Blueprint $table) {
+        Schema::create('tweets', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->string('body');
@@ -28,6 +28,6 @@ class CreateTweetsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tweet');
+        Schema::dropIfExists('tweets');
     }
 }
