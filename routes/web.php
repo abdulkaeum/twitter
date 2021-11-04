@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\FollowController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
@@ -25,4 +26,6 @@ Route::middleware('auth')->group(function (){
     Route::patch('profiles/{user:username}', [ProfileController::class, 'update'])->name('profile.update');
 
     Route::post('follow/{user}', [FollowController::class, 'store'])->name('follow');
+
+    Route::get('explore', [ExploreController::class, 'index'])->name('explore.index');
 });
