@@ -46,12 +46,10 @@
                                 </h2>
 
                                 <x-forms.input name="name" required/>
-
                                 <x-forms.input name="username" required/>
-
                                 <x-forms.input name="email" type="email" required/>
-
                                 <x-forms.input name="password" type="password" required/>
+                                <x-forms.input name="password_confirmation" type="password" required/>
 
                                 <x-forms.submit>
                                     Sign Up
