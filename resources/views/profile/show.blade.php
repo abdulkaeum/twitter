@@ -10,8 +10,8 @@
             </div>
 
             <div class="flex">
-                @if(current_user()->is($user))
-                    <x-layout.link href="/" color="white">Edit Profile</x-layout.link>
+                @can('edit', $user)
+                    <x-layout.link href="{{ route('profile.edit', $user->name) }}" color="white">Edit Profile</x-layout.link>
                 @endif
 
                 @if(current_user()->isNot($user))

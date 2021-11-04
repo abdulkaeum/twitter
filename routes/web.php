@@ -21,6 +21,7 @@ Route::middleware('auth')->group(function (){
     Route::post('tweet', [TweetController::class, 'store'])->name('tweet.store');
 
     Route::get('profiles/{user:name}', [ProfileController::class, 'show'])->name('profile');
+    Route::get('profiles/{user:name}/edit', [ProfileController::class, 'edit'])->name('profile.edit');
 
     Route::post('follow/{user}', [FollowController::class, 'store'])->name('follow');
 });

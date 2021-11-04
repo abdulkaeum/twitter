@@ -13,4 +13,13 @@ class ProfileController extends Controller
            'user' => $user
         ]);
     }
+
+    public function edit(User $user)
+    {
+        $this->authorize('edit', $user);
+
+        return view('profile.edit', [
+            'user' => $user
+        ]);
+    }
 }
