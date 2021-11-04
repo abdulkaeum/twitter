@@ -10,13 +10,15 @@
             </div>
 
             <div class="flex">
-                <x-layout.link href="/" color="white">Edit Profile</x-layout.link>
+                @if(current_user()->is($user))
+                    <x-layout.link href="/" color="white">Edit Profile</x-layout.link>
+                @endif
 
-                @if($user->id !== auth()->user()->id)
+                @if(current_user()->isNot($user))
                     <form action="{{ route('follow', $user) }}" method="POST">
                         @csrf
                         <x-forms.submit>
-                            {{ auth()->user()->following($user) ? 'Unfollow' : 'Follow' }}
+                            {{ current_user()->following($user) ? 'Unfollow' : 'Follow' }}
                         </x-forms.submit>
                     </form>
                 @else
