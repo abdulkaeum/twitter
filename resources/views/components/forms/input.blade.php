@@ -10,7 +10,7 @@
         type="{{ $type }}"
         name="{{ $name }}"
         id="{{ $name }}"
-        placeholder="{{ ucwords($name) }}"
+        placeholder="{{ ucwords(str_replace('_', ' ', $name)) }}"
         {{ $attributes(['value' => old($name)]) }}
     >
 
