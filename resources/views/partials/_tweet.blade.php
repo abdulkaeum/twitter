@@ -17,8 +17,12 @@
         <p class="text-xs mb-2">
             {{ $tweet->created_at->diffForHumans() }}
         </p>
-        <p class="text-sm">
+        <p class="text-sm mb-3">
             {{ $tweet->body }}
         </p>
+
+        @if($tweet->user->isNot(auth()->user()))
+            <x-forms.like-buttons :tweet="$tweet"/>
+        @endif
     </div>
 </div>

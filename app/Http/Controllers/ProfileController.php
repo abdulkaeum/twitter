@@ -13,7 +13,7 @@ class ProfileController extends Controller
     {
         return view('profile.show', [
             'user' => $user,
-            'tweets' => $user->tweets()->latest()->paginate(5)
+            'tweets' => $user->tweets()->withLikes()->latest()->paginate(5)
         ]);
     }
 
