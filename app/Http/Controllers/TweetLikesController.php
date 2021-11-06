@@ -14,10 +14,17 @@ class TweetLikesController extends Controller
         return back()->with('success', 'Tweet Liked');
     }
 
-    public function destroy(Tweet $tweet)
+    public function update(Tweet $tweet)
     {
         $tweet->dislike();
 
         return back()->with('success', 'Liked removed');
+    }
+
+    public function destroy(Tweet $tweet)
+    {
+        $tweet->likes()->delete();
+
+        return back()->with('success', 'Like removed');
     }
 }
