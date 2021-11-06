@@ -22,15 +22,17 @@
                 {{ $tweet->body }}
             </p>
         </div>
-        <div class="justify-right text-xs">
-            <form action="{{ route('tweet.destroy', $tweet) }}" method="POST">
-                @csrf
-                @method('DELETE')
-                <button type="submit">
-                    <i class="far fa-trash-alt"></i>
-                </button>
-            </form>
-        </div>
+        @if($tweet->user->is(auth()->user()))
+            <div class="justify-right text-xs">
+                <form action="{{ route('tweet.destroy', $tweet) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit">
+                        <i class="far fa-trash-alt"></i>
+                    </button>
+                </form>
+            </div>
+        @endif
     </div>
     <div>
         @if($tweet->user->isNot(auth()->user()))
