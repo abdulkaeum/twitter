@@ -27,4 +27,11 @@ class TweetController extends Controller
 
         return back()->with('success', 'Your Tweety is out in the open');
     }
+
+    public function destroy(Tweet $tweet)
+    {
+        $tweet->delete();
+
+        return back()->with('success', 'Tweet removed');
+    }
 }
