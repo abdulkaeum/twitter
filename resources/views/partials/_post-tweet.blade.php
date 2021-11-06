@@ -6,7 +6,7 @@
         <textarea
             name="body"
             id="body"
-            placeholder="What's on you mind..."
+            placeholder="What's on your mind..."
             class="w-full p-3 outline-none"
             required
             autofocus

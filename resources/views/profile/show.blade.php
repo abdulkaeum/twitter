@@ -1,7 +1,7 @@
 <x-layout.layout>
 
     <header class="mb-6 relative">
-        <img src="/images/banner.jpg" alt="" class="mb-3 rounded-xl">
+        <img src="{{ $user->banner }}" alt="" class="mb-3 rounded-xl">
 
         <div class="flex justify-between items-center mb-4">
             <div class="">
@@ -28,9 +28,7 @@
         </div>
 
         <p class="text-sm">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae deleniti fuga itaque nemo odio odit.
-            Consequatur cum distinctio dolorem enim laborum nulla perferendis quaerat repellat rerum, totam vel velit
-            voluptas.
+            {{ $user->description ?? 'No description yet.' }}
         </p>
 
         <img
