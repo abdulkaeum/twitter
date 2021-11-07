@@ -35,7 +35,7 @@
         @endif
     </div>
     <div>
-        @if($tweet->user->isNot(auth()->user()))
+        @if($tweet->user->isNot(auth()->user()) && auth()->user()->following($tweet->user))
             <x-forms.like-buttons :tweet="$tweet"/>
         @endif
     </div>
