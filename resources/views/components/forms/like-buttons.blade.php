@@ -3,7 +3,7 @@
         @csrf
         <div class="flex items-center mr-5">
             <button type="submit" class="h-8 px-2 m-2" title="Like">
-                <i class="far fa-thumbs-up mr-1 text-lg text-{{ $tweet->isLikedBy(current_user()) ? 'blue' : 'grey' }}-500"></i>
+                <i class="far fa-thumbs-up mr-1 text-lg text-{{ $tweet->likes ? 'blue' : 'grey' }}-500"></i>
             </button>
             <span class="text-sm text-grey-500">
                     {{ $tweet->likes ?? 0 }}
@@ -16,7 +16,7 @@
         @method('PATCH')
         <div class="flex items-center mr-5">
             <button type="submit" class="h-8 px-2 m-2" title="Dislike">
-                <i class="far fa-thumbs-down mr-1 text-lg text-{{ $tweet->isDislikedBy(current_user()) ? 'blue' : 'grey' }}-500"></i>
+                <i class="far fa-thumbs-down mr-1 text-lg text-{{ $tweet->dislikes ? 'blue' : 'grey' }}-500"></i>
             </button>
             <span class="text-sm text-grey-500">
                     {{ $tweet->dislikes ?? 0 }}
@@ -24,7 +24,7 @@
         </div>
     </form>
 
-    @if($tweet->likes()->count())
+    @if($tweet->isDislikedBy(current_user()) || $tweet->isLikedBy(current_user()))
         <form action="{{ route('like.destroy', $tweet->id) }}" method="POST">
             @csrf
             @method('DELETE')
