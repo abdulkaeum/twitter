@@ -29,7 +29,7 @@
             @csrf
             @method('DELETE')
             <div class="flex items-center">
-                <button type="submit" class="h-8 px-2 m-2" title="Remove like">
+                <button type="submit" class="h-8 px-2 m-2" title="Remove my like / dislike">
                     <i class="fas fa-times mr-1 text-xs"></i>
                 </button>
             </div>

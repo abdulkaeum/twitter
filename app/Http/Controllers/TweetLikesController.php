@@ -23,7 +23,10 @@ class TweetLikesController extends Controller
 
     public function destroy(Tweet $tweet)
     {
-        $tweet->likes()->delete();
+        auth()->user()->likes()
+            ->where('tweet_id', $tweet->id)
+            ->where('user_id', auth()->user()->id)
+            ->delete();
 
         return back()->with('success', 'Like removed');
     }
