@@ -19,8 +19,8 @@
 
         <x-layout.hr/>
 
-        <a href="#"
-           class="flex items-center ml-2 p-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+        <a href="{{ route('profile', auth()->user()) }}"
+           class="flex items-center p-3 text-xl text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
 
             <i class="fas fa-user"></i>
 
@@ -30,7 +30,7 @@
         </a>
 
         <a href="{{ route('explore.index') }}"
-           class="flex items-center ml-2 p-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+           class="flex items-center p-3 text-xl text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
 
             <i class="fas fa-hashtag"></i>
 
@@ -39,8 +39,8 @@
             </span>
         </a>
 
-        <a href="#"
-           class="flex items-center ml-2 p-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+        <a href="{{ route('bookmark.index', current_user()->username) }}"
+           class="flex items-center p-3 text-xl text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
 
             <i class="far fa-bookmark"></i>
 
@@ -50,7 +50,7 @@
         </a>
 
         <a href="#"
-           class="flex items-center ml-2 p-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+           class="flex items-center p-3 text-xl text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
 
             <i class="far fa-envelope"></i>
 
@@ -60,7 +60,7 @@
         </a>
 
         <a href="#" onclick="event.preventDefault(); document.querySelector('#logout-form').submit();"
-           class="flex items-center p-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+           class="flex items-center p-3 text-xl text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
             <svg class="w-5 h-5 mx-1" viewBox="0 0 24 24" fill="none"
                  xmlns="http://www.w3.org/2000/svg">
                 <path
