@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BookmarkController;
 use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\FollowController;
 use App\Http\Controllers\ProfileController;
@@ -21,6 +22,8 @@ Route::middleware('auth')->group(function (){
 
     Route::get('/', [TweetController::class, 'index'])->name('home');
     Route::post('tweet', [TweetController::class, 'store'])->name('tweet.store');
+    Route::get('bookmarks/{user:username}', [BookmarkController::class, 'index'])->name('bookmark.index');
+    Route::post('tweet/{tweet}/bookmark', [BookmarkController::class, 'store'])->name('tweet.bookmark');
     Route::delete('tweet/{tweet}', [TweetController::class, 'destroy'])->name('tweet.destroy');
 
     Route::get('profiles/{user:username}', [ProfileController::class, 'show'])->name('profile');

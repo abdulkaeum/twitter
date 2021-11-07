@@ -80,4 +80,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Like::class);
     }
+
+    public function bookmarks()
+    {
+        return $this->belongsToMany(Tweet::class, 'bookmarks', 'user_id', 'tweet_id');
+    }
 }

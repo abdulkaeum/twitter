@@ -60,4 +60,11 @@ class Tweet extends Model
             ['liked' => $liked]
         );
     }
+
+    public function isBookmarked(User $user)
+    {
+        return (bool) $user->bookmarks()
+            ->where('tweet_id', $this->id)
+            ->count();
+    }
 }

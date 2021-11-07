@@ -1,4 +1,12 @@
 <div class="flex border border-blue-100 bg-blue-50 rounded">
+
+    <form action="{{ route('tweet.bookmark', $tweet->id) }}" method="POST">
+        @csrf
+        <button type="submit" class="h-8 px-2 m-2" title="{{ $tweet->isBookmarked(current_user()) ? 'Remove bookmark' : 'Bookmark' }}">
+            <i class="far fa-bookmark mr-2 mr-1 text-lg text-{{ $tweet->isBookmarked(current_user()) ? 'blue' : 'grey' }}-500"></i>
+        </button>
+    </form>
+
     <form action="{{ route('like', $tweet->id) }}" method="POST">
         @csrf
         <div class="flex items-center mr-5">

@@ -35,7 +35,7 @@ class ProfileController extends Controller
             'username' => ['required', 'min:5', 'max:20', Rule::unique('users', 'username')->ignore($user)],
             'email' => ['required', 'min:5', Rule::unique('users', 'email')->ignore($user)],
             'password' => ['required', 'min:8', 'confirmed'],
-            'avatar' => ['nullable', 'image', 'mimes:jpg,png,jpeg,gif,svg', Rule::dimensions()->maxWidth(1230)->maxHeight(510)],
+            'avatar' => ['nullable', 'image', 'mimes:jpg,png,jpeg,gif,svg', Rule::dimensions()->maxWidth(1230)->maxHeight(520)],
             'description' => ['nullable', 'min:10', 'max:50'],
             'banner' => ['nullable', 'image', 'mimes:jpg,png,jpeg,gif,svg', Rule::dimensions()->maxWidth(1200)->maxHeight(365)]
         ]);

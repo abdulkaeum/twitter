@@ -15,7 +15,7 @@
         </a>
     </li>
     <li>
-        <a class="font-bold text-lg mb-4 block" href="/">
+        <a class="font-bold text-lg mb-4 block" href="{{ route('bookmark.index', current_user()->username) }}">
             <i class="far fa-bookmark mr-2"></i> Bookmarks
         </a>
     </li>
