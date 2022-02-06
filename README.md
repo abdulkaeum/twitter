@@ -36,4 +36,4 @@
 - Explore users
 <img alt="" width="450" src="public/app-screenshots/explore.png">
 - Bookmaks
-<img alt="" width="450" src="public/app-screenshots/bookmaks.png">
+<img alt="" width="450" src="public/app-screenshots/bookmarks.png">
