@@ -24,16 +24,22 @@
 
 #### Screenshots
 - Login
-<img alt="" width="450" src="public/app-screenshots/login.png">
+<img alt="" style="max-width: 800px; width: 100%;" src="public/app-screenshots/login.png">
+
 - Register
-<img alt="" width="450" src="public/app-screenshots/register.png">
+<img alt="" style="max-width: 800px; width: 100%;" src="public/app-screenshots/register.png">
+
 - Home and timeline
-<img alt="" width="450" src="public/app-screenshots/home.png">
+<img alt="" style="max-width: 800px; width: 100%;" src="public/app-screenshots/home.png">
+
 - Profile
-<img alt="" width="450" src="public/app-screenshots/profile.png">
+<img alt="" style="max-width: 800px; width: 100%;" src="public/app-screenshots/profile.png">
+
 - Edit profile
-<img alt="" width="450" src="public/app-screenshots/edit.png">
+<img alt="" style="max-width: 800px; width: 100%;" src="public/app-screenshots/edit.png">
+
 - Explore users
-<img alt="" width="450" src="public/app-screenshots/explore.png">
+<img alt="" style="max-width: 800px; width: 100%;" src="public/app-screenshots/explore.png">
+
 - Bookmaks
-<img alt="" width="450" src="public/app-screenshots/bookmarks.png">
+<img alt="" style="max-width: 800px; width: 100%;" src="public/app-screenshots/bookmarks.png">
